@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="cron_import" model="ir.cron" forcecreate="True">
+            <field name="name">Execute Import PLSQL</field>
+            <field name="active">True</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_import()</field>
+            <field name="args" eval="'()'"/>
+        </record>
+
+    </data>
+</odoo>
